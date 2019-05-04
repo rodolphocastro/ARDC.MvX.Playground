@@ -61,8 +61,8 @@ namespace ARDC.MvX.Playground.Core.ViewModels.Auth
         private async Task LoginAsync()
         {
             bool result = await UserService.LoginAsync(Login, Password);
-            //if (result)
-            // TODO: Navegar para próxima tela
+            if (result)
+                await NavigationService.Navigate<HomeViewModel>();
             //else
             // TODO: Exibir aviso de senha inválida
         }
