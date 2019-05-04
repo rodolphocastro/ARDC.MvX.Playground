@@ -20,13 +20,13 @@ namespace ARDC.MvX.Playground.Core.ViewModels
 
         private IUserService UserService { get; }
 
-        public override async Task Initialize()
+        public override async void ViewAppearing()
         {
-            await base.Initialize();
-
             // Caso o usuário não esteja autenticado, redirecionar para o Landing
             if (!UserService.IsAuthenticated)
                 await NavigationService.Navigate<LandingViewModel>();
+
+            base.ViewAppearing();
         }
     }
 }
