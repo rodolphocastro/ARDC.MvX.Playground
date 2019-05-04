@@ -15,6 +15,7 @@
         public LandingViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
         {
             LoginCommand = new MvxAsyncCommand(NavigateToLogin);
+            SignUpCommand = new MvxAsyncCommand(NavigateToSignUp);
         }
 
         /// <summary>
@@ -23,8 +24,18 @@
         public IMvxAsyncCommand LoginCommand { get; private set; }
 
         /// <summary>
+        /// Command para navegar ao Cadastro
+        /// </summary>
+        public IMvxAsyncCommand SignUpCommand { get; private set; }
+
+        /// <summary>
         /// Navega ao ViewModel de Login.
         /// </summary>
         private async Task NavigateToLogin() => await NavigationService.Navigate<LoginViewModel>();
+
+        /// <summary>
+        /// Navega ao ViewModel de Cadastro.
+        /// </summary>
+        private async Task NavigateToSignUp() => await NavigationService.Navigate<SignupViewModel>();
     }
 }
