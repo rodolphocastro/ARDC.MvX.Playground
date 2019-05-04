@@ -70,12 +70,7 @@ namespace ARDC.MvX.Playground.Core.ViewModels.Auth
         /// <summary>
         /// Navega ao ViewModel de "Esqueci minha senha"
         /// </summary>
-        private async Task NavigateToForgotPassword()
-        {
-            // TODO: Implementar
-            //await NavigationService.Navigate<ForgotPasswordViewModel>();
-            await Task.CompletedTask;
-        }
+        private async Task NavigateToForgotPassword() => await NavigationService.Navigate<ForgotPasswordViewModel>();
 
     }
 }
