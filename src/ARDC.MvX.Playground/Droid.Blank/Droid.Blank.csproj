@@ -59,6 +59,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ForgotPassword.cs" />
     <Compile Include="Activities\Home.cs" />
     <Compile Include="Activities\Landing.cs" />
     <Compile Include="Activities\Login.cs" />
@@ -133,6 +134,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ForgotPassword.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

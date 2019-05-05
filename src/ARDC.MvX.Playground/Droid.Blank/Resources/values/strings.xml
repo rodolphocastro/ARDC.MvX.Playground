@@ -6,4 +6,5 @@
   <string name="landing_signup">Não sou cadastrado</string>
   <string name="login_login">Login</string>
   <string name="login_esqueci">Esqueci minha senha</string>
+  <string name="recover_recover">Recuperar senha</string>
 </resources>
