@@ -48,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@color/colorAccent"
-                android:textColor="@color/colorAccentText"/>
+                android:textColor="@color/colorAccentText"
+                app:MvxBind="Click SignUpCommand"/>
 
         </LinearLayout>
         
@@ -57,16 +58,16 @@
     <LinearLayout
         android:id="@+id/layout_landing_footer"
         android:orientation="horizontal"
-        app:layout_anchor="@id/scroll_view_landing"
-        app:layout_anchorGravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
+        app:layout_anchor="@id/scroll_view_landing"
+        app:layout_anchorGravity="bottom"
         android:background="@color/colorPrimary">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
             android:text="@string/landing_footer"
             android:textSize="12sp"
             android:textColor="@color/colorPrimaryText"/>
