@@ -59,6 +59,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Home.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreen.cs" />
@@ -107,7 +108,11 @@
       <Version>28.0.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Home.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ARDC.MvX.Playground.Core\ARDC.MvX.Playground.Core.csproj">
       <Project>{a5eec05c-3b2e-4116-95e0-6708f97dfb18}</Project>
