@@ -1,0 +1,18 @@
+<resources>
+  <string name="app_name">ARDC MvX Droid.Blank</string>
+  <string name="landing_message">Bem vindo ao App Blank!</string>
+  <string name="landing_footer">Protótipo feito por Rodolpho Alves</string>
+  <string name="landing_login">Já sou cadastrado</string>
+  <string name="landing_signup">Não sou cadastrado</string>
+  <string name="login_login">Login</string>
+  <string name="login_esqueci">Esqueci minha senha</string>
+  <string name="login_message">Nos informe suas credenciais para login no App</string>
+  <string name="recover_recover">Recuperar senha</string>
+  <string name="recover_message">Nos informe seu login para que possamos enviar uma nova senha</string>
+  <string name="signup_message">Escolha um login, seu e-mail para contato e uma senha segura para poder acessar o aplicativo</string>
+  <string name="signup_confirm_message">Após o cadastro vocè poderá preencher seu perfil com mais informações</string>
+  <string name="signup_signup">Cadastrar Usuário</string>
+  <string name="hint_login">Login</string>
+  <string name="hint_password">Senha</string>
+  <string name="hint_email">Email</string>
+</resources>
