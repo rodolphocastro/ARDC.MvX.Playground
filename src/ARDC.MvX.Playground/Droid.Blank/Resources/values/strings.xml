@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">ARDC MvX Droid.Blank</string>
-    <string name="landing_message">Bem vindo ao App Blank!</string>
-    <string name="landing_footer">Protótipo feito por Rodolpho Alves</string>
+  <string name="app_name">ARDC MvX Droid.Blank</string>
+  <string name="landing_message">Bem vindo ao App Blank!</string>
+  <string name="landing_footer">Protótipo feito por Rodolpho Alves</string>
+  <string name="landing_login">Já sou cadastrado</string>
+  <string name="landing_signup">Não sou cadastrado</string>
+  <string name="login_login">Login</string>
+  <string name="login_esqueci">Esqueci minha senha</string>
 </resources>

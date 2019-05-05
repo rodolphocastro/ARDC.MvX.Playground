@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/layout_login">
+    
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view_login"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingTop="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+        
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textNoSuggestions"
+                    android:hint="Login"
+                    android:textColor="@android:color/black"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="Senha"
+                    android:textColor="@android:color/black"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/button_login" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/login_login"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorAccentText"
+                app:MvxBind="Click LoginCommand"/>
+
+            <TextView
+                android:id="@+id/esqueci_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="@string/login_esqueci"
+                android:textSize="14sp"
+                android:textColor="@color/colorAccent"/>
+
+        </LinearLayout>
+        
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
