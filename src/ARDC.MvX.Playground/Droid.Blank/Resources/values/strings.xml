@@ -6,5 +6,9 @@
   <string name="landing_signup">Não sou cadastrado</string>
   <string name="login_login">Login</string>
   <string name="login_esqueci">Esqueci minha senha</string>
+  <string name="login_message">Nos informe suas credenciais para login no App</string>
   <string name="recover_recover">Recuperar senha</string>
+  <string name="recover_message">Nos informe seu login para que possamos enviar uma nova senha</string>
+  <string name="hint_login">Login</string>
+  <string name="hint_password">Senha</string>
 </resources>

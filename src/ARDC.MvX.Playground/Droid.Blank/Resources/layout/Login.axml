@@ -21,6 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="12dp"
+                android:text="@string/login_message"/>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,23 +38,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textNoSuggestions"
-                    android:hint="Login"
-                    android:textColor="@android:color/black"/>
+                    android:hint="@string/hint_login"
+                    android:textColor="@android:color/black"
+                    android:singleLine="true"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                app:passwordToggleEnabled="true">
                 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_senha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:hint="Senha"
-                    android:textColor="@android:color/black"/>
+                    android:hint="@string/hint_password"
+                    android:textColor="@android:color/black"
+                    android:singleLine="true"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -70,6 +80,7 @@
                 android:text="@string/login_esqueci"
                 android:textSize="14sp"
                 android:textColor="@color/colorAccent"
+                android:textStyle="bold"
                 android:clickable="true"
                 app:MvxBind="Click ForgotPasswordCommand"
             />
