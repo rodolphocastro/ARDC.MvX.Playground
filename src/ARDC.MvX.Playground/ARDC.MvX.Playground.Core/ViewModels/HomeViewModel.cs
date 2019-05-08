@@ -1,5 +1,8 @@
 ﻿using ARDC.MvX.Playground.Core.Services;
 using ARDC.MvX.Playground.Core.ViewModels.Landing;
+using ARDC.MvX.Playground.Core.ViewModels.News;
+using ARDC.MvX.Playground.Core.ViewModels.Services;
+using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -16,9 +19,22 @@ namespace ARDC.MvX.Playground.Core.ViewModels
         public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IUserService userService) : base(logProvider, navigationService)
         {
             UserService = userService ?? throw new ArgumentNullException(nameof(userService));
+
+            NavigateToNewsCommand = new MvxAsyncCommand(NavigateToNewsList);
+            NavigateToServicesCommand = new MvxAsyncCommand(NavigateToServicesList);
         }
 
         private IUserService UserService { get; }
+
+        /// <summary>
+        /// Command para acessar a lista de notícias.
+        /// </summary>
+        public IMvxAsyncCommand NavigateToNewsCommand { get; private set; }
+
+        /// <summary>
+        /// Command para acessar a lista de serviços.
+        /// </summary>
+        public IMvxAsyncCommand NavigateToServicesCommand { get; private set; }
 
         public override async void ViewAppearing()
         {
@@ -28,5 +44,15 @@ namespace ARDC.MvX.Playground.Core.ViewModels
 
             base.ViewAppearing();
         }
+
+        /// <summary>
+        /// Navega até a VM de lista de notícias.
+        /// </summary>
+        private async Task NavigateToNewsList() => await NavigationService.Navigate<NewsListViewModel>();
+
+        /// <summary>
+        /// Navega até a VM de lista de serviços.
+        /// </summary>
+        private async Task NavigateToServicesList() => await NavigationService.Navigate<ServiceListViewModel>();
     }
 }
