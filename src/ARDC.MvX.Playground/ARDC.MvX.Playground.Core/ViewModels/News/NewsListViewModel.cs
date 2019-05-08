@@ -18,6 +18,7 @@ namespace ARDC.MvX.Playground.Core.ViewModels.News
         {
             NewsService = newsPostService ?? throw new ArgumentNullException(nameof(newsPostService));
 
+            News = new MvxObservableCollection<NewsPost>();
             HomeCommand = new MvxAsyncCommand(NavigateToHomeAsync);
             DetailNewsPostCommand = new MvxAsyncCommand<NewsPost>(NavigateToNewsDetailAsync);
         }
