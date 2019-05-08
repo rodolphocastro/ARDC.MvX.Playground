@@ -21,7 +21,8 @@ namespace ARDC.MvX.Playground.Core.ViewModels.Services
             Servicos = new MvxObservableCollection<ServiceItem>();
             HomeCommand = new MvxAsyncCommand(NavigateToHomeAsync);
             DetailServiceCommand = new MvxAsyncCommand<ServiceItem>(NavigateToServiceDetailAsync);
-            AddServiceCommand = new MvxAsyncCommand(NavigateToServiceCreateAsync);
+            AddServiceAutoCommand = new MvxAsyncCommand(AddNewRandomServiceAsync);
+            CreateServiceCommand = new MvxAsyncCommand(NavigateToServiceCreateAsync);
         }
 
         private IServiceItemService ItemService { get; }
@@ -32,9 +33,14 @@ namespace ARDC.MvX.Playground.Core.ViewModels.Services
         public IMvxAsyncCommand<ServiceItem> DetailServiceCommand { get; private set; }
 
         /// <summary>
+        /// Command para adicionar um novo serviço de maneira automática.
+        /// </summary>
+        public IMvxAsyncCommand AddServiceAutoCommand { get; private set; }
+
+        /// <summary>
         /// Command para adicionar um novo serviço.
         /// </summary>
-        public IMvxAsyncCommand AddServiceCommand { get; private set; }
+        public IMvxAsyncCommand CreateServiceCommand { get; private set; }
 
         /// <summary>
         /// Command para retornar à Home.
@@ -64,15 +70,20 @@ namespace ARDC.MvX.Playground.Core.ViewModels.Services
         private async Task NavigateToServiceDetailAsync(ServiceItem service) => await NavigationService.Navigate<ServiceDetailViewModel, int>(service.Id);
 
         /// <summary>
+        /// Adiciona um novo serviço, aleatório, à lista de serviços.
+        /// </summary>
+        private async Task AddNewRandomServiceAsync()
+        {
+            var newService = ServiceItemGenerator.GenerateServiceItem();
+            await ItemService.AddAsync(newService);
+            Servicos.Add(newService);
+            // TODO: Exibir um Toast / Aviso que foi cadastrado um novo serviço
+        }
+
+        /// <summary>
         /// Navega à tela criação de serviços.
         /// </summary>
-        private Task NavigateToServiceCreateAsync()
-        {
-            // TODO: Refatorar para permitir que o cadastro seja feito pelo usuário
-            Servicos.Add(ServiceItemGenerator.GenerateServiceItem());
-            // TODO: Exibir um Toast / Aviso que foi cadastrado um novo serviço
-            return Task.CompletedTask;
-        }
+        private async Task NavigateToServiceCreateAsync() => await NavigationService.Navigate<ServiceCreateViewModel>();
 
         /// <summary>
         /// Navega à Home do App.
