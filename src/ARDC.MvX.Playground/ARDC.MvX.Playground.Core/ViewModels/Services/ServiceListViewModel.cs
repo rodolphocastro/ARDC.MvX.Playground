@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ARDC.MvX.Playground.Core.ViewModels.Services
 {
+    /// <summary>
+    /// ViewModel para listagem de serviços.
+    /// </summary>
     public class ServiceListViewModel : MvxNavigationViewModel
     {
         public ServiceListViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IServiceItemService itemService) : base(logProvider, navigationService)
@@ -58,7 +61,7 @@ namespace ARDC.MvX.Playground.Core.ViewModels.Services
         /// Navega á tela de detalhamento de serviços.
         /// </summary>
         /// <param name="service">O serviço a ser detalhado</param>
-        private async Task NavigateToServiceDetailAsync(ServiceItem service) => NavigationService.Navigate<ServiceDetailViewModel, int>(service.Id);
+        private async Task NavigateToServiceDetailAsync(ServiceItem service) => await NavigationService.Navigate<ServiceDetailViewModel, int>(service.Id);
 
         /// <summary>
         /// Navega à tela criação de serviços.

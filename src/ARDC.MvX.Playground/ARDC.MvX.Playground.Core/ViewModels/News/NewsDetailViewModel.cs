@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ARDC.MvX.Playground.Core.ViewModels.News
 {
+    /// <summary>
+    /// ViewModel para o detalhamento de notícias.
+    /// </summary>
     public class NewsDetailViewModel : MvxNavigationViewModel<int>
     {
         public NewsDetailViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, INewsPostService newsPostService) : base(logProvider, navigationService)

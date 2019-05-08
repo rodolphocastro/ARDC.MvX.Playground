@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ARDC.MvX.Playground.Core.ViewModels.Services
 {
+    /// <summary>
+    /// ViewModel para detalhamento de Serviços.
+    /// </summary>
     public class ServiceDetailViewModel : MvxNavigationViewModel<int>
     {
         public ServiceDetailViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IServiceItemService itemService) : base(logProvider, navigationService)
